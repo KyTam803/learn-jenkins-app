@@ -1,9 +1,6 @@
 pipeline {
     agent any
     
-    environment{
-        my_file=fileExist 'learn-jenkins-app/public/index.html'
-    }
     
     stages {
         stage('Build') {
@@ -34,14 +31,14 @@ pipeline {
        }                 
 
        stage('Check if exists') {
-             when { expression {my_file== 'true'}}
+             when { expression {learn-jenkins-app/public/index.html == 'true'}}
                steps{
                    echo "file exists"
                }  
              }
         
       stage('conditional if not exist'){
-          when {expression {my_file =='false'}}
+          when {expression {learn-jenkins-app/public/index.html =='false'}}
           steps {
               echo "File Exist"
           }        
