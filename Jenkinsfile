@@ -7,16 +7,7 @@ pipeline {
               docker {
                   image 'node:18'
                   reuseNode true
-              }
-          }    
-
-        stage('Test Stage') {
-           steps {
-               echo 'Testing Stage'
-           }        
-        
-            
-            steps {
+          steps {
                 sh '''
                    ls -la
                    node --version
@@ -26,7 +17,14 @@ pipeline {
                    ls -la
                    '''
 
-               }
+                 }               
+              }
+          }    
+
+        stage('Test Stage') {
+           steps {
+               echo 'Testing Stage'
+               }        
             }
         }
     }
