@@ -4,10 +4,13 @@ pipeline {
     
     stages {
         stage('Build') {
+            sh 'npm run build'
+            
             agent {
               docker {
                   image 'node:18'
                   reuseNode true
+                
               }
           }       
             
