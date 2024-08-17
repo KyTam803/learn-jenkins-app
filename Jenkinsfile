@@ -10,11 +10,11 @@ pipeline {
               }
           }  
 
-     stage('Testing Stage'){
+       stage('Testing Stage'){
          agent{
              sh 'Testing Stage'
          }
-     }
+
             
             
 
@@ -28,7 +28,7 @@ pipeline {
                    npm run build
                    ls -la
                    '''
-
+              }
            }
         }
     }
