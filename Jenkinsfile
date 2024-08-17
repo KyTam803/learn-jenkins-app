@@ -8,15 +8,7 @@ pipeline {
                   image 'node:18'
                   reuseNode true
               }
-          }  
-
-       stage('Testing Stage'){
-         agent{
-             label 'Testing Stage'
-         }
-            
-            
-
+          }       
             
           steps {
                 sh '''
@@ -29,7 +21,13 @@ pipeline {
                    sh 'Testing Stage'
                    '''
               }
-           }
         }
+        
+         stage('Testing Stage'){
+           steps {
+             echo 'Testing Stage'
+         }
+       }                 
+        
     }
 }
