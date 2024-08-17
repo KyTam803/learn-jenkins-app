@@ -31,14 +31,14 @@ pipeline {
        }                 
 
        stage('Check if exists') {
-             when { expression {learn-jenkins-app/public/index.html == 'true'}}
+             when { learn-jenkins-app/public/index.html == 'true'}
                steps{
                    echo "file exists"
                }  
              }
         
       stage('conditional if not exist'){
-          when {expression {learn-jenkins-app/public/index.html =='false'}}
+          when  {learn-jenkins-app/public/index.html =='false'}
           steps {
               echo "File Exist"
           }        
