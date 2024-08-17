@@ -30,16 +30,14 @@ pipeline {
        }                 
 
        stage('Check for existence of index.html') {
-           agent{
                steps{
-                 script{
+            
                   if (fileExists('learn-jenkins-app/public/index.html')) {
                       echo "File learn-jenkins-app/public/index.html found!"
                      }
-                  }
-              } 
+                  
+              
            }              
-       }
-        
+       }        
    }
 }
