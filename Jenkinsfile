@@ -11,7 +11,9 @@ pipeline {
           }    
 
         stage('Test Stage') {
-            
+           steps {
+               echo 'Testing Stage'
+           }        
         }
             
             steps {
@@ -22,7 +24,6 @@ pipeline {
                    npm ci
                    npm run build
                    ls -la
-                   "Test Stage"
                    '''
             }
         }
