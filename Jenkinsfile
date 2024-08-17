@@ -8,7 +8,17 @@ pipeline {
                   image 'node:18'
                   reuseNode true
               }
-          }       
+          }  
+
+     stage('Testing Stage'){
+         agent{
+             sh 'Testing Stage'
+         }
+     }
+            
+            
+
+            
           steps {
                 sh '''
                    ls -la
