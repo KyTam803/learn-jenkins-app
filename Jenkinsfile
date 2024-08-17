@@ -1,6 +1,10 @@
 pipeline {
     agent any
     
+    environment{
+        my_file=fileExist 'learn-jenkins-app/public/index.html'
+    }
+    
     stages {
         stage('Build') {
             agent {
@@ -29,15 +33,19 @@ pipeline {
          }
        }                 
 
-       stage('Check for existence of index.html') {
+       stage('Check if exists') {
+             when { expression {my_file== 'true'}}
                steps{
-            
-                  if (fileExists('learn-jenkins-app/public/index.html')) {
-                      echo "File learn-jenkins-app/public/index.html found!"
-                     }
-                  
-              
-           }              
-       }        
-   }
+                   echo "file exists"
+               }  
+             }
+        
+      stage('conditional if not exist'){
+          when {expression {my_file =='false'}}
+          steps {
+              echo "File Exist"
+          }        
+    }
+  }       
 }
+    
