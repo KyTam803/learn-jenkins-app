@@ -31,18 +31,17 @@ pipeline {
        }                 
 
        stage('Check if exists') {
-             when { learn-jenkins-app/public/index.html == 'true'}
                steps{
+                   script{
+                      if(fileExists('learn-jenkins-app/public/index.html')){
+                   }
                    echo "file exists"
                }  
              }
+           }
         
-      stage('conditional if not exist'){
-          when  {learn-jenkins-app/public/index.html =='false'}
-          steps {
-              echo "File Exist"
-          }        
-    }
+     
+    
   }       
 }
     
