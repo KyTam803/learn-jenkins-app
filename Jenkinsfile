@@ -4,7 +4,6 @@ pipeline {
     
     stages {
         stage('Build') {
-            sh 'npm run build'
             
             agent {
               docker {
@@ -16,6 +15,7 @@ pipeline {
             
           steps {
                 sh '''
+                   sh 'npm test'
                    ls -la
                    node --version
                    npm --version
