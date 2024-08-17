@@ -14,7 +14,7 @@ pipeline {
            steps {
                echo 'Testing Stage'
            }        
-        }
+        
             
             steps {
                 sh '''
@@ -25,6 +25,8 @@ pipeline {
                    npm run build
                    ls -la
                    '''
+
+               }
             }
         }
     }
