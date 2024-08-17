@@ -12,9 +12,8 @@ pipeline {
 
        stage('Testing Stage'){
          agent{
-             sh 'Testing Stage'
+             label 'Testing Stage'
          }
-
             
             
 
@@ -27,6 +26,7 @@ pipeline {
                    npm ci
                    npm run build
                    ls -la
+                   sh 'Testing Stage'
                    '''
               }
            }
