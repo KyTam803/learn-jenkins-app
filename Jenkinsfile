@@ -41,13 +41,13 @@ pipeline {
                    echo "file exists"
                }  
              }
-           }
+       }
         
-     post {
+  }  
+    post {
         always{
-            junit 'test-results/junit.xml'
-        }     
-     }
-  }       
+            echo 'test-results/junit.xml'
+        }
+    }
 }
     
