@@ -18,7 +18,7 @@ pipeline {
                     npm run build
                     ls -la
                 '''
-            }
+            }        
         }
        
      stage('Test') {
@@ -43,5 +43,5 @@ pipeline {
             junit 'test-results/junit.xml'
         }
     }
-  }    
-}
+ }    
+
